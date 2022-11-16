@@ -35,7 +35,7 @@ jobs:
       - name: Install Deps
         run: npm i
       - name: Get libunasm
-        run: cd src; mkdir libunasm; cd libunasm; mkdir dist; cd dist; curl -L -o "インデックス.js" "https://github.com/unasmlang/libunasm-ts/releases/latest/download/lib.js"; cd ../../..
+        run: cd src; mkdir libunasm; cd libunasm; mkdir dist; cd dist; curl -L -o "インデックス.js" "https://unasmlang.github.io/libunasm-ts/lib.js"; cd ../../..
       - name: Build
         run: npm run build
       - name: Setup Pages
