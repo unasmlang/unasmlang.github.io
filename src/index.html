@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>unasm web</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://yieldingexploiter.github.io/no-more-dark-reader/no-dark-reader.css"
+    />
+    <style>
+      html {
+        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+          'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+          'Helvetica Neue', sans-serif;
+        background-color: rgb(24, 26, 38);
+        color: #cad3f5;
+      }
+      textarea[disabled] {
+        cursor: not-allowed;
+      }
+      textarea {
+        color: #cad3f5;
+        background: #1e2030;
+        padding: 2px 2px;
+        border: none;
+      }
+      button {
+        border: none;
+        background: #363a4f;
+        color: #cad3f5;
+        padding: 16px 16px;
+      }
+    </style>
+    <script src="./importlib.ts" type="module"></script>
+  </head>
+  <body>
+    <h2>Unasm Web Demo</h2>
+    <p>
+      Simple (not fancy) &
+      <a href="https://github.com/unasmlang/unasmlang.github.io">Open-Sauce</a>
+      Unasm Web Thing
+    </p>
+    <textarea id="input" cols="70" rows="10" placeholder="Source Code">
+r1 72; outc
+r1 101; outc
+r1 108; outc; outc
+r1 111; outc
+r1 32; outc
+r1 87; outc
+r1 111; outc
+r1 114 ;outc
+r1 108; outc
+r1 100; outc
+r1 33; outc</textarea
+    >
+    <br />
+    <br />
+    <button onclick="exec(document.querySelector('#input').value)">
+      Execute
+    </button>
+    <br />
+    <br />
+    <textarea
+      id="out"
+      cols="70"
+      rows="10"
+      readonly
+      disabled
+      placeholder="Output"
+    ></textarea>
+    <p
+      style="
+        position: fixed;
+        bottom: 4px;
+        left: 50vw;
+        transform: translate(-50%, 0);
+      "
+    >
+      Note: You can access libunasm on this page in f12 with the libunasm
+      global.
+    </p>
+  </body>
+</html>
